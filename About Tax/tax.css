@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Ephesis&family=Lavishly+Yours&family=Parisienne&family=Playwrite+DE+VA+Guides&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    font-family: "Poppins", serif;
+}
+body {
+    font-family: Arial, sans-serif;
+    background: black; /* Full Black Background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #ddd; /* Light Grey Text */
+}
+
+.tax-container {
+    background: rgba(255, 255, 255, 0.1); /* Semi-Transparent White */
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    width: 450px;
+    text-align: center;
+    color: white; /* Text color for better visibility */
+}
+
+h1 {
+    color: white; /* White Heading */
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.7); /* Slightly Transparent White */
+    margin-bottom: 20px;
+}
+
+ul {
+    text-align: left;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+ul li {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8); /* Slightly Transparent White */
+}
+
+button {
+    background-color: #6200ea; /* Purple Button */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background-color: #4b00c2; /* Darker Purple on Hover */
+}
+@media only screen and (max-width: 600px) {
+    body {
+        height: 100vh;
+        padding: 10px;
+        margin: 20px;
+    }
+
+    .tax-container {
+        padding: 20px;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    ul {
+        padding-left: 10px;
+    }
+
+    ul li {
+        font-size: 0.85rem;
+    }
+
+    button {
+        width: 100%;
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+
+    body {
+        margin: 5px;
+    }
+
+}

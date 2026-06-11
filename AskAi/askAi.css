@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Ephesis&family=Lavishly+Yours&family=Parisienne&family=Playwrite+DE+VA+Guides&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", serif;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #1e1e1e; /* Dark background */
+}
+.chat-container {
+    width: 90%;
+    max-width: 800px;
+    height: 90vh;
+    background: rgb(59, 58, 58); /* Greyish background */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.chat-header {
+    background: #6200ea; /* Blue header */
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.chat-box {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+.message {
+    max-width: 70%;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 10px;
+}
+.bot-message {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    align-self: flex-start;
+}
+.user-message {
+    background: #6200ea; /* Blue */
+    color: white;
+    align-self: flex-end;
+}
+.chat-input {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #444;
+    background: rgb(48, 48, 48);
+}
+.chat-input input {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    border-radius: 5px;
+    background: #2c2c2c;
+    color: white;
+}
+.chat-input input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+.chat-input button {
+    padding: 12px 15px;
+    margin-left: 10px;
+    background: #6200ea; /* Blue */
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background 0.3s ease-in-out;
+}
+.chat-input button:hover {
+    background: #4b00c2; /* Darker blue */
+}
+.suggestions {
+    background: rgb(48, 48, 48);
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    border-top: 1px solid #444;
+}
+.suggestions span {
+    background: #6200ea;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.3s ease-in-out;
+}
+.suggestions span:hover {
+    background: #4b00c2;
+}
+/* Loader animation */
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+.dots::after {
+    content: " .";
+    animation: dots-animation 1.5s infinite;
+}
+
+.chat-header {
+    background: #6200ea;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.home-button {
+    position: absolute;
+    right: 25px;
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.home-button:hover {
+    text-decoration: underline;
+}
+
+
+@keyframes dots-animation {
+    0% { content: " ."; }
+    33% { content: " .."; }
+    66% { content: " ..."; }
+    100% { content: " ."; }
+}
+/* Preserve formatting of AI response */
+.bot-message {
+    white-space: pre-line;
+}
+@media only screen and (max-width: 600px) {
+    .chat-container {
+        width: 100%;
+        height: 95vh;
+        border-radius: 5px;
+    }
+
+    .chat-header {
+        font-size: 1rem;
+        padding: 12px;
+    }
+
+    .home-button {
+        font-size: 0.9rem;
+        right: 10px;
+    }
+
+    .chat-input {
+        padding: 8px;
+    }
+
+    .chat-input input {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    .chat-input button {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    .suggestions span {
+        font-size: 0.8rem;
+        padding: 6px 10px;
+    }
+}

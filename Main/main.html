@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpendWise</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js Library -->
+</head>
+<body>
+    
+
+    <!-- Sidebar Navigation -->
+    <div class="sidebar" id="mobile-nav">
+        <div class="profile">
+            <img src="../assets/SpendWise.png" alt="User Profile">
+            <h3 id="userName"></h3>
+        </div>
+        <ul>
+            <li class="active" id="home">Home</li>
+            <a href="../AskAi/askAi.html"><li id="askAi">Ask AI</li></a>
+            <a href="../About Tax/tax.html"><li>About Tax</li></a>
+            <li id="logout">Logout</li>
+        </ul>
+        <div id="toast" class="toast hidden">Logged out successfully!</div>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="main-content" id="main-content">
+        <h2 id="dashboardOverview">Dashboard Overview</h2>
+        <div class="dashboard-actions">
+            <div class="btnsss">
+                <button id="new-expense-btn" class="btn">+ New Expense</button>
+                <button id="new-income-btn" class="btn">+ New Income</button>
+            </div>
+            <!-- Net Balance Section -->
+            <div class="net-balance">
+                <h3>Net Balance</h3>
+                <p id="net-balance-amount">₹0</p> <!-- This will dynamically update -->
+            </div>
+        </div>
+        
+        <div class="cards">
+            <div class="card">
+                <canvas id="incomeExpenseChart"></canvas>
+            </div>
+            <div class="card recent-expenses-card">
+                <h3>Recent Expenses</h3>
+                <ul id="recent-expenses-list">
+                    <!-- Dynamic Expenses will be appended here -->
+                </ul>
+            </div>
+        </div>
+        <div class="reports">
+            <div class="report">
+                <canvas id="teamSpendingTrend"></canvas>
+            </div>
+            <div class="report">
+                <canvas id="dayToDayExpenses"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for New Expense -->
+    <div id="expense-modal" class="modal hidden">
+        <div class="modal-content">
+            <h3>Add New Expense</h3>
+            <form id="expense-form">
+                <label for="expense-name">Expense Name:</label>
+                <input type="text" id="expense-name" name="expense-name" required>
+                
+                <label for="expense-amount">Amount:</label>
+                <input type="number" id="expense-amount" name="expense-amount" required>
+
+                <label for="expense-category">Category:</label>
+                <input type="text" id="expense-category" name="expense-category" required>
+
+                <label for="expense-date">Date:</label>
+                <input type="date" id="expense-date" name="expense-date" required>
+
+                <button type="submit" class="btn">Save Expense</button>
+                <button type="button" class="btn cancel" id="close-modal-btn">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal for New Income -->
+    <div id="income-modal" class="modal hidden">
+        <div class="modal-content">
+            <h3>Add New Income</h3>
+            <form id="income-form">
+                <label for="income-source">Source:</label>
+                <input type="text" id="income-source" name="income-source" required>
+                
+                <label for="income-amount">Amount:</label>
+                <input type="number" id="income-amount" name="income-amount" required>
+
+                <label for="income-date">Date:</label>
+                <input type="date" id="income-date" name="income-date" required>
+
+                <button type="submit" class="btn">Save Income</button>
+                <button type="button" class="btn cancel" id="close-income-modal-btn">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+    <script defer src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,395 @@
+@import url('https://fonts.googleapis.com/css2?family=Ephesis&family=Lavishly+Yours&family=Parisienne&family=Playwrite+DE+VA+Guides&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    font-family: "Poppins", serif;
+}
+
+body{
+    display: flex;
+    background-color: #121212;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #1E1E1E;
+    padding: 20px;
+    height: 100vh;
+}
+.dashboard-actions{
+    display: flex;
+    gap: 700px;
+}
+.net-balance{
+    position: absolute;
+    top:40px;
+    right: 80px;
+}
+#net-balance-amount{
+font-size: 20px;
+position: absolute;
+top: 35px;
+}
+.profile img {
+    width: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    filter: invert();
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+ul li {
+    padding: 10px;
+    cursor: pointer;
+    color: #fff;
+    text-decoration: none;
+}
+ ul li:hover{
+    background-color: #222;
+ }
+
+ul li.active {
+    background-color: #222;
+    border-radius: 5px;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cards, .quick-access, .reports {
+    display: flex;
+    gap: 10px;
+}
+
+.card, .report {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 5px;
+    flex: 1;
+    text-align: center;
+}
+
+.recent-expenses-card {
+    padding: 10px;
+    font-size: 14px; /* Smaller font size */
+    text-align: center;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#incomeExpenseChart {
+    max-width: 200px; /* Adjust the max width as per your needs */
+    max-height: 200px; /* Adjust the max height as per your needs */
+    margin: 0 auto;
+}
+
+#pendingApprovalsChart {
+    max-width: 200px; /* Adjust the max width as per your needs */
+    max-height: 200px; /* Adjust the max height as per your needs */
+    margin: 0 auto;
+}
+
+.quick-access {
+    margin-top: 20px;
+}
+
+.quick-access-box {
+    background-color: #222; /* Background color of the box */
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px; /* You can adjust the max-width to your needs */
+    margin: 0 auto; /* Center the box */
+    text-align: center;
+}
+
+.quick-access-box h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #fff;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: space-between; /* Space the buttons evenly */
+    gap: 10px; /* Space between the buttons */
+}
+
+.quick-access-box .btn {
+    flex: 1; /* Makes the buttons take equal width */
+    padding: 12px;
+    font-size: 16px;
+}
+
+.quick-access-box .btn:hover {
+    background-color: #3700b3;
+}
+
+.btn {
+    background-color: #6200ea;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #3700b3;
+}
+
+/* Expenses Page Specific Styles */
+#expenses-page {
+    display: none; /* Hidden by default */
+}
+
+.hidden {
+    display: none;
+}
+
+.expense-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.expense-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.filter {
+    padding: 8px;
+    font-size: 14px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+}
+/* Modal Styling */
+#expense-modal, #income-modal {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it stays on top of other elements */
+}
+
+.modal-content {
+    background-color: rgb(59, 58, 58);
+    width: 550px; /* Modal width */
+    margin: 0 20px; /* Equal gap on the left and right side of the modal */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Add padding to ensure content inside the modal is properly spaced from the edges */
+}
+
+.modal-header,
+.modal-body,
+.modal-footer {
+    margin-bottom: 20px;
+}
+
+.modal-header {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    padding: 0 15px; /* Add padding to both sides of the form content */
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Button Styling */
+button {
+    padding: 10px 20px;
+    background-color: #6200ea;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #3700b3;
+}
+
+/* Close Button Styling */
+#close-modal-btn, #close-income-modal-btn {
+    font-size: 1.2rem;
+    color: #6200ea;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+#close-modal-btn:hover, #close-income-modal-btn:hover {
+    color: #3700b3;
+}
+
+/* Form Input Fields */
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select {
+    width: 92%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+select:focus {
+    border-color: #6200ea;
+}
+
+/* Optional: Space Between Input Fields */
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+/* Toast Notification */
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #333;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+.dashboard-actions{
+    display: flex;
+}
+.toast.show {
+    opacity: 1;
+}
+@media (max-width: 1024px) {
+    .dashboard-actions {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cards,
+    .reports {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 200px;
+    }
+
+    .main-content {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .sidebar ul {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .profile {
+        display: none;
+    }
+    .net-balance {
+        position: absolute;
+        right: 20px;
+        top: 120px;
+    }
+   
+    .dashboard-actions {
+        align-items: center;
+    }
+
+    .btn-container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 675px) {
+    .net-balance {
+        position: absolute;
+        top: 25%;
+        right: auto;
+    }
+    #dashboardOverview{
+        text-align: center;
+        margin-bottom: 80px;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .dashboard-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .cards,
+    .reports {
+        flex-direction: column;
+    }
+
+    .card,
+    .report {
+        min-width: auto;
+    }
+
+    .modal-content {
+        width: 95%;
+    }
+}
+

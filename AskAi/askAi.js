@@ -46,7 +46,6 @@ async function generateAns() {
             headers: {
                 "Content-Type": "application/json",
                 "X-goog-api-key": apiKey
-},
             },
             body: JSON.stringify({
                 contents: [

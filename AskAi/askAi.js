@@ -1,5 +1,4 @@
-const apiKey = "AQ.Ab8RN6KFRmLvmnvZ1AXu6FXnCMrYTDk315BAGo0Ayvd25lsCpA";
-const apiUrl = "https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent";
+const apiUrl = "/api/chat";
 
 const send = document.getElementById("send");
 const chatBox = document.querySelector(".chat-box");
@@ -43,9 +42,8 @@ async function generateAns() {
         const response = await fetch(apiUrl, {
             method: "POST",
             headers: {
-                "Content-Type": "application/json",
-                "X-goog-api-key": apiKey
-            },
+    "Content-Type": "application/json"
+},
             body: JSON.stringify({
                 contents: [
                     {

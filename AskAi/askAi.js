@@ -60,12 +60,19 @@ async function generateAns() {
             })
         });
 
-        if (!response.ok) {
-            const errorText = await response.text();
-            throw new Error(
-                `HTTP Error ${response.status}: ${errorText}`
-            );
-        }
+        if (response.status === 503) {
+    loaderMessage.remove();
+    addMessage(
+        "Gemini is currently busy. Please try again in a few seconds.",
+        "bot"
+    );
+    return;
+}
+
+if (!response.ok) {
+    const errorText = await response.text();
+    throw new Error(`HTTP Error ${response.status}: ${errorText}`);
+}
 
         const data = await response.json();
 

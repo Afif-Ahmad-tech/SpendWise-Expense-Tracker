@@ -1,6 +1,5 @@
-const apiKey = "YOUR_GEMINI_API_KEY";
-const apiUrl =
-  "https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent";
+const apiKey = "AQ.Ab8RN6KFRmLvmnvZ1AXu6FXnCMrYTDk315BAGo0Ayvd25lsCpA";
+const apiUrl = "https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent";
 
 const send = document.getElementById("send");
 const chatBox = document.querySelector(".chat-box");

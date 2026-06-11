@@ -55,8 +55,7 @@ async function generateAns() {
                         parts: [{ text: ques }]
                     }
                 ]
-            })
-        });
+                });
 
         if (!response.ok) {
             const errorText = await response.text();

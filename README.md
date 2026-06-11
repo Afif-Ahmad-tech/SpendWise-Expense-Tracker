@@ -6,7 +6,7 @@
 
 You can explore the **SpendWise** website through the following hosted link:
 
-[**SpendWise**](https://expense-tracker-namira.vercel.app/) 
+[**SpendWise**](https://spend-wise-expense-tr-git-2c3232-afif-spendwise-expense-tracker.vercel.app/) 
 
 
 ## 🚀 Features
